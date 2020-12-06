@@ -62,6 +62,7 @@ jobs:
         dotnet build day01/day01.csproj
         dotnet build day02/day02.csproj
         dotnet build day03/day03.csproj
+        dotnet build day04/day04.csproj
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
