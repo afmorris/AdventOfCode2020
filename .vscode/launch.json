@@ -5,14 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Day02 Launch",
+            "name": "Launch",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/day02/bin/Debug/netcoreapp3.0/day02.dll",
+            "program": "${workspaceFolder}/day03/bin/Debug/netcoreapp3.0/day03.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/day02",
+            "cwd": "${workspaceFolder}/day03",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
