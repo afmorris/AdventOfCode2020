@@ -21,7 +21,7 @@ namespace day02
 
                 var min = int.Parse(input[i].Substring(0, dashIndex));
                 var max = int.Parse(input[i].Substring(dashIndex + 1, spaceIndex - dashIndex - 1));
-                var letter = input[i].Substring(colonIndex - 1, 1);
+                var letter = char.Parse(input[i].Substring(colonIndex - 1, 1));
                 var password = input[i].Substring(colonIndex + 2);
 
                 if (password[min + 1] == letter)
