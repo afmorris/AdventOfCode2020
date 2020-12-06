@@ -18,8 +18,14 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      run: |
+        dotnet restore day01/day01.csproj
+        dotnet restore day02/day02.csproj
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: |
+        dotnet build day01/day01.csproj --configuration Release --no-restore
+        dotnet build day02/day02.csproj --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: |
+        dotnet test day01/day01.csproj --no-restore --verbosity normal
+        dotnet test day02/day02.csproj --no-restore --verbosity normal
