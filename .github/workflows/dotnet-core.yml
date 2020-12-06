@@ -21,11 +21,14 @@ jobs:
       run: |
         dotnet restore day01/day01.csproj
         dotnet restore day02/day02.csproj
+        dotnet restore day03/day03.csproj
     - name: Build
       run: |
         dotnet build day01/day01.csproj --configuration Release --no-restore
         dotnet build day02/day02.csproj --configuration Release --no-restore
+        dotnet build day03/day03.csproj --configuration Release --no-restore
     - name: Test
       run: |
         dotnet test day01/day01.csproj --no-restore --verbosity normal
         dotnet test day02/day02.csproj --no-restore --verbosity normal
+        dotnet test day03/day03.csproj --no-restore --verbosity normal

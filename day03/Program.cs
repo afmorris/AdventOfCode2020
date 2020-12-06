@@ -14,7 +14,7 @@ namespace day03
 
             int totalHeight = input.Length;
             int initialWidth = input[0].Length;
-            int minWidth = totalHeight * 3;
+            int minWidth = totalHeight * 7;
             int multiplier = (minWidth / initialWidth) + 1;
 
             for (int i = 0; i < input.Length; i++)
@@ -22,25 +22,31 @@ namespace day03
                 input[i] = string.Concat(Enumerable.Repeat(input[i], multiplier));
             }
 
-            int xOffset = 0;
-            int noTree = 0;
-            int tree = 0;
-            for (int i = 0; i < input.Length; i++)
+            long first = TreeCount(1, 1, input);
+            long second = TreeCount(3, 1, input);
+            long third = TreeCount(5, 1, input);
+            long fourth = TreeCount(7, 1, input);
+            long fifth = TreeCount(1, 2, input);
+
+            Console.WriteLine(first * second * third * fourth * fifth);
+        }
+
+        private static long TreeCount(int xOffset, int yOffset, string[] input)
+        {
+            int x = 0;
+            long output = 0;
+            for (int i = 0; i < input.Length; i += yOffset)
             {
-                char spot = input[i][xOffset];
-                if (spot == '.')
+                char spot = input[i][x];
+                if (spot == '#')
                 {
-                    noTree++;
-                }
-                else if (spot == '#')
-                {
-                    tree++;
+                    output++;
                 }
 
-                xOffset += 3;
+                x += xOffset;
             }
 
-            Console.WriteLine(tree);
+            return output;
         }
     }
 }
