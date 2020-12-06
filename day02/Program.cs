@@ -24,7 +24,9 @@ namespace day02
                 var letter = char.Parse(input[i].Substring(colonIndex - 1, 1));
                 var password = input[i].Substring(colonIndex + 2);
 
-                if (password[min + 1] == letter)
+                var test1 = password[min - 1] == letter;
+                var test2 = password[max - 1] == letter;
+                if ((test1 && !test2) || (!test1 && test2))
                 {
                     correct++;
                 }
